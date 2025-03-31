@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ポートフォリオ</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>琴々のポートフォリオ</h1>
+    <p>琴々のデザインの魅力をご覧ください</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#projects">作品</a></li>
+      <li><a href="#about">自己紹介</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="projects">
+        <h2>作品一覧</h2>
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <div class="project-card">
+              <img src="img/IMG_4510.jpg" alt="">
+            </div>
+            <div class="project-card">
+              <img src="img/IMG_4511.jpg" alt="">
+            </div>
+            <div class="project-card">
+              <img src="img/IMG_4512.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    <section id="about">
+      <h2>自己紹介</h2>
+      <p>こんにちは、琴々です！密度の高い絵が好きです🍎
+        <br>展示会のお誘いやお仕事はお気軽にお問い合わせください！
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>お問い合わせ</h2>
+      <form>
+        <label for="name">お名前:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="message">メッセージ:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit">送信</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 琴々のポートフォリオ</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

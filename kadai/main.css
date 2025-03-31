@@ -1,0 +1,297 @@
+/* 基本スタイル */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    
+    color: #fff; /* テキスト色を白に（背景画像に合わせて調整可能） */
+  }
+  
+  
+  /* ヒーローセクションのオーバーレイ */
+header.hero {
+    position: relative;
+    text-align: center;
+    color: #fff; /* テキストを白に */
+}
+
+header.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 半透明の黒を追加 */
+    z-index: 1; /* 背景より前面に配置 */
+}
+
+header.hero h1, header.hero p {
+    position: relative;
+    z-index: 2; /* テキストをオーバーレイの前面に配置 */
+}
+
+  
+  
+  /* ナビゲーションバー */
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    background: #fff; /* ナビゲーションを白に */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 薄い影を追加 */
+  }
+  
+  nav li {
+    margin: 0 15px;
+  }
+  
+  nav a {
+    color: #000; /* テキストは黒 */
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    transition: color 0.3s ease, border 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #000;
+    border-bottom: 2px solid #000;
+  }
+  
+  /* プロジェクトカード */
+  #projects {
+    padding: 50px 20px;
+    text-align: center;
+    background: #fff; /* 背景を白に */
+  }
+  
+  #projects h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #000; /* タイトルを黒に */
+  }
+  
+  .project-grid {
+    display: flex;
+    flex-wrap: wrap; /* 複数行に自動折り返し */
+    justify-content: space-around; /* 各カードの間隔を均等に配置 */
+    gap: 20px; /* 各カードの間にスペースを追加 */
+  }
+  
+ 
+  
+  .project-card {
+    background: #f9f9f9; /* ソフトな白 */
+    margin: 15px auto;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 10px;
+    color: #000; /* テキストを黒に */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    flex: 1 1 calc(33.333% - 20px); /* 横幅を3等分に指定しつつ余白を考慮 */
+    box-sizing: border-box; /* パディングやボーダーを幅に含める */
+    max-width: calc(33.333% - 20px); /* 確実に3等分になるよう指定 */
+  }
+
+  .project-card img {
+    max-width: 100%; /* カードの幅に収まるように設定 */
+    height: auto; /* アスペクト比を維持 */
+    max-height: 200px; /* 最大高さを設定してサイズを均一化 */
+    display: block; /* ブラウザの余白をなくす */
+    margin: 0 auto; /* 中央揃え */
+    border-radius: 8px; /* 画像の角を丸めるオプション */
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  
+  .project-card:hover {
+    transform: scale(1.05);
+    transform: translateY(-10px); /* カードを少し浮かせる */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* より強いシャドウ効果を追加 */
+  }
+
+  .project-card:hover img {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .project-card p {
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .project-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .project-card:hover p {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  
+  /* 自己紹介セクション */
+  #about {
+    padding: 50px 20px;
+    background: #f5f5f5; /* 明るいグレー */
+    color: #333; /* 優しい黒 */
+    text-align: center;
+  }
+  
+  #about h2 {
+    font-size: 2rem;
+    color: #000;
+  }
+  
+  #about p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+  
+  /* お問い合わせフォーム */
+  #contact {
+    padding: 50px 20px;
+    text-align: center;
+    background: #fff;
+  }
+  
+  #contact h2 {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    background: #f9f9f9; /* ソフトな白 */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  form label {
+    color: #000;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    color: #000;
+  }
+  
+  form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background: #ddd;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  form button:hover {
+    background: #ccc;
+    transform: scale(1.1);
+  }
+  
+  /* フッター */
+  footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #f5f5f5;
+    color: #333;
+    font-size: 0.9rem;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .project-card {
+        max-width: 90%;
+    }
+
+    header.hero h1 {
+        font-size: 2rem; 
+    }
+}
+
+form button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  form button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple 0.6s ease;
+  }
+  
+  @keyframes ripple {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      width: 200%;
+      height: 200%;
+      opacity: 0;
+    }
+  }
+  
+  .carousel-container {
+    position: relative;
+    overflow: hidden; /* 内容がはみ出さないように隠す */
+    width: 100%;
+    height: 220px; /* 高さを調整 */
+    margin: 0 auto;
+  }
+  
+  .carousel-track {
+    display: flex;
+    width: calc(400px * 4); /* カードの幅 * カードの枚数 */
+    animation: scroll 12s linear infinite; /* 無限スクロールアニメーション */
+  }
+  
+  .project-card {
+    flex: 0 0 400px; /* カード1枚の幅 */
+    margin: 0 10px; /* カード間のスペース */
+    text-align: center;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-1600px); /* 全体の幅分スライド */
+    }
+  }
+  
+  .carousel-container:hover .carousel-track {
+    animation-play-state: paused; /* ホバー時にアニメーション停止 */
+  }
+  
